@@ -1,12 +1,13 @@
 let fullName  = {
     firstName: 'Karthik',
     lastName: 'Benki',
-    printFullName:function () {
-        console.log(`${this.firstName} ${this.lastName}`);
-    }
 }
 
-fullName.printFullName();
+let printFullName = function () {
+    console.log(`${this.firstName} ${this.lastName}`);
+}
+
+printFullName.call(fullName);
 
 let name2 = {
     firstName: 'Manoj',
@@ -14,5 +15,5 @@ let name2 = {
 }
 
 //borrowing taking a function from other object
-fullName.printFullName.call(name2);
+printFullName.call(name2);
 
