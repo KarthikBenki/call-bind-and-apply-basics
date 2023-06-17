@@ -5,21 +5,21 @@ let myName = {
     lastName:"Doe"
 }
 
-let printMyName = function(state){
-    console.log(this.firstName + " " + this.lastName + " from "+ state);
+let printMyName = function(state,city){
+    console.log(this.firstName + " " + this.lastName + " from "+ state+" , "+city);
 }
 
 let printFullNameBind = printMyName.bind(myName,"Karnataka");
 
-printFullNameBind();
+printFullNameBind("Bangalore");
 
 //lets create our own bind method
 
 Function.prototype._bind = function (...args) {
     let obj = this;
     let params = args.slice(1)
-    return function(){
-        obj.apply(args[0],params)//changed to apply bacause params is an array
+    return function(...args2){
+        obj.apply(args[0],[...params,...args2])//changed to apply bacause params is an array
     }
 }
 
@@ -27,4 +27,4 @@ Function.prototype._bind = function (...args) {
 
 let printFullName_Bind = printMyName._bind(myName,"Karnataka");
 
-printFullName_Bind();
+printFullName_Bind("Bangalore");
