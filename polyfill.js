@@ -5,11 +5,11 @@ let myName = {
     lastName:"Doe"
 }
 
-let printMyName = function(){
-    console.log(this.firstName + " " + this.lastName);
+let printMyName = function(state){
+    console.log(this.firstName + " " + this.lastName + " from "+ state);
 }
 
-let printFullNameBind = printMyName.bind(myName);
+let printFullNameBind = printMyName.bind(myName,"Karnataka");
 
 printFullNameBind();
 
@@ -17,13 +17,14 @@ printFullNameBind();
 
 Function.prototype._bind = function (...args) {
     let obj = this;
+    let params = args.slice(1)
     return function(){
-        obj.call(args[0])
+        obj.apply(args[0],params)//changed to apply bacause params is an array
     }
 }
 
 //lets test our bind method
 
-let printFullName_Bind = printMyName._bind(myName);
+let printFullName_Bind = printMyName._bind(myName,"Karnataka");
 
 printFullName_Bind();
