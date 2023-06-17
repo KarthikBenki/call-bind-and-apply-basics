@@ -17,3 +17,12 @@ let name2 = {
 //borrowing taking a function from other object
 printFullName.call(name2,"Karnataka","Bangalore");
 
+
+const name3 = {
+    firstName: 'Mouna',
+    lastName: 'Yashvanth',
+}
+
+//usage of apply method
+printFullName.apply(name3,["Karnataka","Bhalayal"])
+
