@@ -23,6 +23,14 @@ const name3 = {
     lastName: 'Yashvanth',
 }
 
+console.log("After apply method");
 //usage of apply method
 printFullName.apply(name3,["Karnataka","Bhalayal"])
 
+
+//bind method
+
+console.log("after bind method");
+let printMyName = printFullName.bind(name3,"Karnataka","Chitradurga")
+
+printMyName();
