@@ -3,11 +3,11 @@ let fullName  = {
     lastName: 'Benki',
 }
 
-let printFullName = function () {
-    console.log(`${this.firstName} ${this.lastName}`);
+let printFullName = function (state,city) {
+    console.log(`${this.firstName} ${this.lastName} from ${state}, ${city}`);
 }
 
-printFullName.call(fullName);
+printFullName.call(fullName,"Karnataka","Chitradurga");
 
 let name2 = {
     firstName: 'Manoj',
@@ -15,5 +15,5 @@ let name2 = {
 }
 
 //borrowing taking a function from other object
-printFullName.call(name2);
+printFullName.call(name2,"Karnataka","Bangalore");
 
