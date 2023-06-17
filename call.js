@@ -1,6 +1,6 @@
 let fullName  = {
-    firstName: 'Karthik',
-    lastName: 'Benki',
+    firstName: 'John',
+    lastName: 'Marshel',
 }
 
 let printFullName = function (state,city) {
@@ -11,7 +11,7 @@ printFullName.call(fullName,"Karnataka","Chitradurga");
 
 let name2 = {
     firstName: 'Manoj',
-    lastName: 'Benki',
+    lastName: 'Marshel',
 }
 
 //borrowing taking a function from other object
@@ -19,8 +19,8 @@ printFullName.call(name2,"Karnataka","Bangalore");
 
 
 const name3 = {
-    firstName: 'Mouna',
-    lastName: 'Yashvanth',
+    firstName: 'Nova',
+    lastName: 'Disozza',
 }
 
 console.log("After apply method");
